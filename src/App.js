@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Auth from './Auth/Auth'
+import { Route, Switch, withRouter } from 'react-router-dom';
+
 
 class App extends Component {
   state = {
@@ -51,7 +53,7 @@ class App extends Component {
     }
   }
   handleLogin = async (data) => {
-    const loginResponse = await fetch('http://localhost:8000/api/v1/login', {
+    const loginResponse = await fetch('http://localhost:8000/api/v1/users/login', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(data),
