@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import './App.css';
 import Auth from './Auth/Auth'
-import { Route, Switch, withRouter } from 'react-router-dom';
-
+import UserShow from './UserShow/UserShow'
+import Splash from './Splash/Splash'
+import Login from './Login/Login'
+import Register from './Register/Register'
 
 class App extends Component {
   state = {
@@ -17,6 +20,20 @@ class App extends Component {
 
   async componentDidMount(){
     this.getUsers()
+  }
+
+  getUser = async (id) => {
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/users/{id}', {
+        credentials: 'include'
+      })
+      if (response.ok) {
+        const responseParsed = await response.json()
+        console.log(responseParsed)
+      }
+    } catch(err) {
+      console.log(err)
+    }
   }
 
   getUsers = async () => {
@@ -70,8 +87,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Auth handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>
+      <div>
+        <BrowserRouter>
+        <Switch>
+            <Route exact path={'/'} component={() => <Splash />}/>
+            <Route exact path={'/Login'} component={() => <Login handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
+            <Route exact path={'/Register'} component={() => <Register handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
+            <Route exact path={'/UserShow'} component={() => <UserShow />}/>
+            <Auth handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>
+          
+        </Switch>  
+        </BrowserRouter>
+        
       </div>
     );
   }

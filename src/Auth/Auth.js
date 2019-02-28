@@ -33,6 +33,9 @@ class Auth extends Component {
   render() {
     return (
       <div className="Auth">
+
+      
+
           <div className="Register">
             REGISTER
             <form onSubmit={this.handleRegisterSubmit}>
