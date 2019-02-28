@@ -5,8 +5,8 @@ import './Splash.css'
 const Splash = () => {
     return (
         <div>
-            <Link to="/Login">Login</Link>
-            <Link to="/Register">Register</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
         </div>
     )
 }
