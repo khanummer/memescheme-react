@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import './App.css';
-import Auth from './Auth/Auth'
 import UserShow from './UserShow/UserShow'
 import Splash from './Splash/Splash'
 import Login from './Login/Login'
 import Register from './Register/Register'
+import NewMeme from './NewMeme/NewMeme';
 
 class App extends Component {
   state = {
+    currentUser: '',
     id: '',
     username: '',
     email: '',
@@ -78,8 +78,14 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     })
-
     const parsedResponse = await loginResponse.json();
+    this.setState({
+      currentUser: parsedResponse.id,
+      username: parsedResponse.username,
+      email: parsedResponse.email,
+      password: parsedResponse.password
+    })
+    
 
     // this.props.getUsers()
     console.log(parsedResponse, 'LOGGED IN')
@@ -93,9 +99,8 @@ class App extends Component {
             <Route exact path={'/'} component={() => <Splash />}/>
             <Route exact path={'/Login'} component={() => <Login handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
             <Route exact path={'/Register'} component={() => <Register handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
-            <Route exact path={'/UserShow'} component={() => <UserShow />}/>
-            <Auth handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>
-          
+            <Route exact path={'/UserShow'} component={() => <UserShow username={this.state.username} email={this.state.email}/>}/>
+            <Route exact path={'/NewMeme'} component={() => <NewMeme created_by={this.state.currentUser}/>}/>
         </Switch>  
         </BrowserRouter>
         

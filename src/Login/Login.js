@@ -44,14 +44,11 @@ class Login extends Component {
             <input type="text" name="password" onChange={this.handleChange}/>
             </label>
 
-            <label>
-            Verify Password:
-            <input type="text" name="verify_password" onChange={this.handleChange}/>
-            </label>
-
             <button type="submit">LOGIN</button>
 
         </form>
+        <Link to='/UserShow'><button>User Show</button></Link>
+        <Link to='/NewMeme'><button type="submit">Create New Meme</button></Link>
         </div>
     );
   }
