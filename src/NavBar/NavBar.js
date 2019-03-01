@@ -26,21 +26,23 @@ class NavBar extends Component {
     
     render(){
         return(
-        <div>
-            NAVBAR
+        <div className="NavBar">
         {
           this.props.currentUser
-            && <Link to={`/user-show/${this.props.currentUser.id}`}>User Show</Link>
+            && <Link className="NavBarLink" to={`/user-show/${this.props.currentUser.id}`}>User Show</Link>
         }
-        <Link to='/new-meme'>Create New Meme |</Link>
-        <Link to='/user-list-show'>User List Show |</Link>
-        <Link to='/meme-list-show'>Meme List Show |</Link>
+        <Link className="NavBarLink" to='/new-meme'>Create New Meme</Link>
+        |
+        <Link className="NavBarLink" to='/user-list-show'>User List Show</Link>
+        |
+        <Link className="NavBarLink" to='/meme-list-show'>Meme List Show</Link>
+        |
         {
             !this.props.currentUser.id
-            ?  [<Link to='/login'>Login |</Link>,
-                <Link to='/register'>Register |</Link>]
-            : [<span>{this.props.currentUser.username} hello</span>,
-                <Link to='logout'>Logout</Link>
+            ?  [<Link className="NavBarLink" to='/login'>Login</Link>, ' | ',
+                <Link className="NavBarLink" to='/register'>Register</Link>]
+            : [<span>Yo Whaddup, {this.props.currentUser.username}</span>,
+                <Link className="NavBarLink" to='logout'>Logout</Link>
                 ]
         }
        
