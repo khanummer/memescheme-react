@@ -46,6 +46,7 @@ class MemeShow extends Component {
                 <div>
                     <h1>{u.image}</h1>
                     <button onClick={(e) => this.deleteMeme(e)}>Delete Meme</button>
+                    <Link to={`/edit-meme/${this.props.match.params.id}`}><button>Edit Meme</button></Link>
                 </div>
                 )}
             </div>

@@ -10,6 +10,7 @@ import UserListShow from './UserListShow/UserListShow'
 import MemeListShow from './MemeListShow/MemeListShow'
 import MemeShow from './MemeShow/MemeShow'
 import EditUser from './EditUser/EditUser'
+import EditMeme from './EditMeme/EditMeme'
 import NavBar from './NavBar/NavBar'
 
 
@@ -173,6 +174,7 @@ class App extends Component {
             <Route exact path={'/meme-list-show/'} component={(props) => <MemeListShow {...props} memes={this.state.memes} getMeme={this.getMeme}/>} />
             <Route exact path={'/meme-show/:id'} component={(props) => <MemeShow {...props} memes={this.state.memes}/>}/>
             <Route exact path={'/edit-user/:id'} component={(props) => <EditUser {...props} currentUser={this.state.currentUser}/>}/>
+            <Route exact path={'/edit-meme/:id'} component={EditMeme}/>
         </Switch>  
         </BrowserRouter>
         
