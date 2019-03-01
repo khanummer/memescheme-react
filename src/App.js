@@ -32,18 +32,18 @@ class App extends Component {
     this.getMemes()
   }
 
-  getUser = async (id) => {
-    try {
-      const response = await fetch('http://localhost:8000/api/v1/users/{id}', {
-        credentials: 'include'
-      })
-      if (response.ok) {
-        const responseParsed = await response.json()
-      }
-    } catch(err) {
-      console.log(err)
-    }
-  }
+  // getUser = async (id) => {
+  //   try {
+  //     const response = await fetch('http://localhost:8000/api/v1/users/{id}', {
+  //       credentials: 'include'
+  //     })
+  //     if (response.ok) {
+  //       const responseParsed = await response.json()
+  //     }
+  //   } catch(err) {
+  //     console.log(err)
+  //   }
+  // }
 
   getUsers = async () => {
     try {
@@ -56,8 +56,9 @@ class App extends Component {
       })
       if (response.ok) {
         const responseParsed = await response.json()
+        console.log(responseParsed)
         this.setState({
-          users: responseParsed
+          users: responseParsed.users
         })
       }
     } catch(err) {
@@ -77,7 +78,7 @@ class App extends Component {
       if(response.ok) {
         const responseParsed = await response.json()
         this.setState({
-          memes: responseParsed
+          memes: responseParsed.memes
         })
       }
     } catch(err) {
@@ -85,29 +86,30 @@ class App extends Component {
     }
   }
 
-  getMeme = async (id) => {
-    try {
-      const response = await fetch('http://localhost:8000/api/v1/memes/{id}', {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      if (response.ok) {
-        const responseParsed = await response.json()
-        console.log(responseParsed,'this is GETMEME')
-        this.setState({
-          image: responseParsed.image,
-          top_text: responseParsed.top_text,
-          bottom_text: responseParsed.bottom_text,
-          created_by: responseParsed.created_by
-        })
-      }
-    } catch(err) {
-      console.log(err)
-    }
-  }
+  // getMeme = async (id) => {
+  //   try {
+  //     const response = await fetch('http://localhost:8000/api/v1/memes/{id}', {
+  //       method: 'GET',
+  //       credentials: 'include',
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       }
+  //     })
+  //     if (response.ok) {
+  //       const responseParsed = await response.json()
+  //       console.log(responseParsed,'this is GETMEME')
+  //       this.setState({
+  //         image: responseParsed.image,
+  //         top_text: responseParsed.top_text,
+  //         bottom_text: responseParsed.bottom_text,
+  //         created_by: responseParsed.created_by
+  //       })
+  //       console.log(this.state,' this is state after setstate fetch')
+  //     }
+  //   } catch(err) {
+  //     console.log(err)
+  //   }
+  // }
 
   handleRegister = async (data) => {
     try {
@@ -150,19 +152,21 @@ class App extends Component {
     console.log(parsedResponse, 'LOGGED IN')
   }
 
+  
+
   render() {
     return (
       <div>
         <BrowserRouter>
         <Switch>
             <Route exact path={'/'} component={() => <Splash />}/>
-            <Route exact path={'/login'} component={() => <Login handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
+            <Route exact path={'/login'} component={() => <Login handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin} currentUser={this.currentUser}/>}/>
             <Route exact path={'/register'} component={() => <Register handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
-            <Route exact path={'/user-show/:id'} component={() => <UserShow username={this.state.username} email={this.state.email}/>}/>
+            <Route exact path={'/user-show/:id'} component={() => <UserShow users={this.state.users} email={this.state.email}/>}/>
             <Route exact path={'/new-meme'} component={() => <NewMeme created_by={this.state.currentUser}/>}/>
             <Route exact path={'/user-list-show'} component={(props) => <UserListShow {...props} users={this.state.users}/>} />
-            <Route exact path={'/meme-list-show/'} component={(props) => <MemeListShow {...props} memes={this.state.memes}/>} />
-            <Route exact path={'/meme-show/:id'} component={(props) => <MemeShow {...props} image={this.state.image} top_text={this.state.top_text} bottom_text={this.state.bottom_text} created_by={this.state.created_by}/>}/>
+            <Route exact path={'/meme-list-show/'} component={(props) => <MemeListShow {...props} memes={this.state.memes} getMeme={this.getMeme}/>} />
+            <Route exact path={'/meme-show/:id'} component={(props) => <MemeShow {...props} memes={this.state.memes}/>}/>
         </Switch>  
         </BrowserRouter>
         
