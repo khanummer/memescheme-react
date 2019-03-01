@@ -1,0 +1,16 @@
+.splash {
+    font-family: 'Coming Soon', cursive;
+    text-decoration: none;
+    color: #9B00FC;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    flex-flow: column nowrap;
+    font-size: 5rem;
+    text-decoration: none;
+    background-color: black;
+
+}
