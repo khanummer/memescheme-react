@@ -133,7 +133,7 @@ class App extends Component {
   render() {
     // console.log(this.state.memes,'THIS IS MEMES IN APP.JS')
     return (
-      <div>
+      <div className="App">
         <NavBar currentUser={this.state.currentUser}/>
         <Switch>
             <Route exact path={'/'} component={() => <Splash />}/>
