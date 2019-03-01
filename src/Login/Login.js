@@ -49,8 +49,8 @@ class Login extends Component {
 
         </form>
         {
-          this.props.currentUser
-            && <Link to={`/user-show/${this.props.currentUser}`}><button>User Show</button></Link>
+          this.props.currentUser.id
+            && <Link to={`/user-show/${this.props.currentUser.id}`}><button>User Show</button></Link>
         }
         <Link to='/new-meme'><button type="submit">Create New Meme</button></Link>
         <Link to='/user-list-show'><button>User List Show</button></Link>

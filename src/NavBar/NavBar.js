@@ -30,11 +30,20 @@ class NavBar extends Component {
             NAVBAR
         {
           this.props.currentUser
-            && <Link to={`/user-show/${this.props.currentUser}`}><button>User Show</button></Link>
+            && <Link to={`/user-show/${this.props.currentUser.id}`}>User Show</Link>
         }
-        <Link to='/new-meme'><button type="submit">Create New Meme</button></Link>
-        <Link to='/user-list-show'><button>User List Show</button></Link>
-        <Link to='/meme-list-show'><button>Meme List Show</button></Link>
+        <Link to='/new-meme'>Create New Meme |</Link>
+        <Link to='/user-list-show'>User List Show |</Link>
+        <Link to='/meme-list-show'>Meme List Show |</Link>
+        {
+            !this.props.currentUser.id
+            ?  [<Link to='/login'>Login |</Link>,
+                <Link to='/register'>Register |</Link>]
+            : [<span>{this.props.currentUser.username} hello</span>,
+                <Link to='logout'>Logout</Link>
+                ]
+        }
+       
 
         </div>
         )
