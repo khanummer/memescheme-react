@@ -49,6 +49,7 @@ class UserShow extends Component {
                 <div>
                     <h1>{u.username}</h1>
                     <button onClick={(e) => this.deleteUser(e)}>Delete User</button>
+                    <Link to={`/edit-user/${this.props.currentUser}`}><button>Edit User</button></Link>
                 </div>
                 )}
             </div>

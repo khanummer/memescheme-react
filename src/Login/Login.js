@@ -25,6 +25,7 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
         <div className="Login">
         Login
@@ -47,7 +48,10 @@ class Login extends Component {
             <button type="submit">LOGIN</button>
 
         </form>
-        <Link to={`/user-show/${this.props.currentUser}`}><button>User Show</button></Link>
+        {
+          this.props.currentUser
+            && <Link to={`/user-show/${this.props.currentUser}`}><button>User Show</button></Link>
+        }
         <Link to='/new-meme'><button type="submit">Create New Meme</button></Link>
         <Link to='/user-list-show'><button>User List Show</button></Link>
         <Link to='/meme-list-show'><button>Meme List Show</button></Link>
