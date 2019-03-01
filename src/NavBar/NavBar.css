@@ -1,0 +1,24 @@
+.NavBar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Coming Soon', cursive;
+    padding: 0.5rem 0;
+
+}
+
+.NavBarLink {
+    text-decoration: none;
+    color: white;
+}
+
+.NavBarLink:visited {
+    color: white;
+}
+
+.NavBarLink:hover {
+    font-weight: 800;
+    color: #FF7600;
+}
+
