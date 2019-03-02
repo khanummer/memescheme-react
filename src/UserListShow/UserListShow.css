@@ -1,0 +1,28 @@
+.UserListShow {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    flex-flow: column nowrap;
+    font-family: 'Coming Soon', cursive;
+    background-color: black;
+    color: #E60000;
+
+
+}
+
+.UserListShow-title {
+    color: #E60000;
+    font-size: 5rem;
+    padding-bottom: 6rem;
+}
+
+.UserListShow-users {
+    color: #E60000;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
