@@ -33,9 +33,9 @@ class NavBar extends Component {
         }
         <Link className="NavBarLink" to='/new-meme'>Create New Meme</Link>
         |
-        <Link className="NavBarLink" to='/user-list-show'>User List Show</Link>
+        <Link className="NavBarLink" to='/user-list-show'>Users</Link>
         |
-        <Link className="NavBarLink" to='/meme-list-show'>Meme List Show</Link>
+        <Link className="NavBarLink" to='/meme-list-show'>Memes</Link>
         |
         {
             !this.props.currentUser.id
