@@ -44,7 +44,9 @@ class MemeShow extends Component {
             <div className="MemeShow">
                 {this.state.meme.map(u => 
                 <div>
-                    <h1>{u.image}</h1>
+                    <div>{u.image}</div>
+                    <div>{u.top_text}</div>
+                    <div>{u.bottom_text}</div>
                     <button onClick={(e) => this.deleteMeme(e)}>Delete Meme</button>
                     <Link to={`/edit-meme/${this.props.match.params.id}`}><button>Edit Meme</button></Link>
                 </div>

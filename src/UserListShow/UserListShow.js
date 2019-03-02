@@ -36,11 +36,11 @@ class UserListShow extends Component {
         console.log(this.props.users, 'this is props .users .users')
         const { users } = this.state
         return (
-            <div className="UserShow">
-                <h1>Dank Meme Users</h1>
+            <div className="UserListShow">
+                <div className="UserListShow-title">Users</div>
 
                 <ul>
-                    { users.map((user, i) => <li key={i}><Link to={`/user-show/${user.id}`}>{user.username}</Link></li>) }
+                    { users.map((user, i) => <li className="UserListShow-users" key={i}><Link className="UserListShow-users" to={`/user-show/${user.id}`}>{user.username}</Link></li>) }
                 </ul>
 
                 
