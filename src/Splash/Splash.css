@@ -15,3 +15,34 @@
     /* height: 650px; */
     height: 100%;
 }
+
+.splash-description {
+    font-size: 1rem;
+}
+
+.splash-register {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.splash-login {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+
+.splash-register:hover {
+    text-decoration: none;
+    padding: 1rem;
+    color: #00DEFF;
+    font-size: 2rem;
+}
+
+.splash-login:hover {
+    text-decoration: none;
+    padding: 1rem;
+    color: #00DEFF;
+    font-size: 2rem;
+}
