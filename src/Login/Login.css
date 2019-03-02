@@ -1,0 +1,33 @@
+.Login {
+    height: 100vh;
+    background-color: black;
+    color: #00EF15;
+    font-family: 'Coming Soon', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 2rem;
+}
+
+#LoginHeader {
+    text-align: center;
+}
+
+.Login form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login form input {
+    text-align: center;
+    background: black;
+    border: none;
+    border-bottom: solid 1.5px #00EF15;
+    color: #00EF15;
+    font-family: 'Coming Soon', cursive;
+    font-size: 2rem;
+}

@@ -28,33 +28,27 @@ class Login extends Component {
     console.log(this.props)
     return (
         <div className="Login">
-        Login
-        <form onSubmit={this.handleLoginSubmit}>
-            <label>
-            Username:
-            <input type="text" name="username" onChange={this.handleChange}/>
-            </label>
+          <div id="LoginHeader">
+            <h1>Login</h1>
+          </div>
+          <form onSubmit={this.handleLoginSubmit}>
+              <label>
+              Username:
+              </label>
+              <input type="text" name="username" onChange={this.handleChange}/>
 
-            <label>
-            Email:
-            <input type="text" name="email" onChange={this.handleChange}/>
-            </label>
+              <label>
+              Email:
+              </label>
+              <input type="text" name="email" onChange={this.handleChange}/>
 
-            <label>
-            Password:
-            <input type="text" name="password" onChange={this.handleChange}/>
-            </label>
+              <label>
+              Password:
+              </label>
+              <input type="text" name="password" onChange={this.handleChange}/>
 
-            <button type="submit">LOGIN</button>
-
-        </form>
-        {
-          this.props.currentUser.id
-            && <Link to={`/user-show/${this.props.currentUser.id}`}><button>User Show</button></Link>
-        }
-        <Link to='/new-meme'><button type="submit">Create New Meme</button></Link>
-        <Link to='/user-list-show'><button>User List Show</button></Link>
-        <Link to='/meme-list-show'><button>Meme List Show</button></Link>
+              <button type="submit" className="LoginButton">LOGIN</button>
+          </form>
         </div>
     );
   }
