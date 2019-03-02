@@ -59,9 +59,12 @@ class UserShow extends Component {
         return (
             <div className="UserShow">
                 <div>
-                    <h1>{user.username}</h1>
-                    <button onClick={(e) => this.deleteUser(e)}>Delete User</button>
-                    <Link to={`/edit-user/${user.id}`}><button>Edit User</button></Link>
+                    <div className="usershow-username">{user.username}</div>
+                    <div className="usershow-email">{user.email}</div>
+                    <div className="usershow-buttons">
+                        <button className="user-show-button" onClick={(e) => this.deleteUser(e)}>delete {user.username}</button>
+                        <Link to={`/edit-user/${user.id}`}><button className="user-show-button" >edit {user.username}</button></Link>
+                    </div>
                 </div>
             </div>
         )
