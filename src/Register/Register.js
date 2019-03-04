@@ -27,32 +27,33 @@ class Register extends Component {
   render() {
     return (
         <div className="Register">
-        Register
-        <form onSubmit={this.handleRegisterSubmit}>
-            <label>
-            Username:
-            <input type="text" name="username" onChange={this.handleChange}/>
-            </label>
+          <div id="RegisterHeader">
+            <h1>Register</h1>
+          </div>
+          <div>
+            <form onSubmit={this.handleRegisterSubmit}>
+              <label>
+              Username:
+              </label>
+              <input type="text" name="username" className="RegisterInput" onChange={this.handleChange}/>
 
-            <label>
-            Email:
-            <input type="text" name="email" onChange={this.handleChange}/>
-            </label>
+              <label>
+              Email:
+              </label>
+              <input type="text" name="email" className="RegisterInput" onChange={this.handleChange}/>
 
-            <label>
-            Password:
-            <input type="text" name="password" onChange={this.handleChange}/>
-            </label>
+              <label>
+              Password:
+              </label>
+              <input type="text" name="password" className="RegisterInput" onChange={this.handleChange}/>
 
-            <label>
-            Verify Password:
-            <input type="text" name="verify_password" onChange={this.handleChange}/>
-            </label>
-
-
-            <button type="submit">REGISTER</button>
-
-        </form>
+              <label>
+              Verify Password:
+              </label>
+              <input type="text" name="verify_password" className="RegisterInput" onChange={this.handleChange}/>
+              <button type="submit" className="RegisterButton">REGISTER</button>
+            </form>
+          </div>
         </div>
     );
   }
