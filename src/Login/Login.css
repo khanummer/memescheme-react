@@ -25,15 +25,18 @@
 .Login form input {
     text-align: center;
     background: black;
-    border: none;
-    border-bottom: solid 1.5px #00EF15;
-    color: #00EF15;
     font-family: 'Coming Soon', cursive;
     font-size: 2rem;
     transition: all .5s;
 }
 
-.Login form input:focus {
+form .LoginInput {
+    border: none;
+    border-bottom: solid 1.5px #00EF15;
+    color: #00EF15;
+}
+
+form .LoginInput:focus {
     background-color: #00EF15;
     color: black;
 }
@@ -44,13 +47,16 @@ form button {
     font-size: 1rem;
     padding: 1rem;
     margin: 1rem;
-    color: #00EF15;
     border: none;
     font-weight: bold;
     transition: all .5s;
   }
 
-form button:hover {
+.LoginButton {
+    color: #00EF15;
+}
+
+.LoginButton:hover {
     background-color: #00EF15;
     color: black;
 }

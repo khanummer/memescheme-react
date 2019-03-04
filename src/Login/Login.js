@@ -35,17 +35,17 @@ class Login extends Component {
               <label>
               Username:
               </label>
-              <input type="text" name="username" onChange={this.handleChange}/>
+              <input type="text" name="username" className="LoginInput" onChange={this.handleChange}/>
 
               <label>
               Email:
               </label>
-              <input type="text" name="email" onChange={this.handleChange}/>
+              <input type="text" name="email" className="LoginInput" onChange={this.handleChange}/>
 
               <label>
               Password:
               </label>
-              <input type="text" name="password" onChange={this.handleChange}/>
+              <input type="text" name="password" className="LoginInput" onChange={this.handleChange}/>
 
               <button type="submit" className="LoginButton">LOGIN</button>
           </form>
