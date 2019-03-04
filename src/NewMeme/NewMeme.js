@@ -41,22 +41,22 @@ class NewMeme extends Component {
 
   render() {
     return (
-        <div className="NewMeme">
-        Register
+        <div className="newMeme">
+        Create New Meme
         <form onSubmit={this.handleNewMemeSubmit}>
             <label>
-            Image:
-            <input type="text" name="image" onChange={this.handleChange}/>
+            Image<br></br>
+            <input type="text" name="image" className="newMemeInput" onChange={this.handleChange}/>
             </label>
 
             <label>
-            Top text:
-            <input type="text" name="top_text" onChange={this.handleChange}/>
+            Top Text<br></br>
+            <input type="text" name="top_text" className="newMemeInput" onChange={this.handleChange}/>
             </label>
 
             <label>
-            Bottom text:
-            <input type="text" name="bottom_text" onChange={this.handleChange}/>
+            Bottom Text<br></br>
+            <input type="text" name="bottom_text" className="newMemeInput" onChange={this.handleChange}/>
             </label>
 
 

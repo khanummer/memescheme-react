@@ -55,28 +55,28 @@ class EditUser extends Component {
     render() {
         const { username, email, password, verify_password } = this.state
         return (
-            <div class="EditUser">
+            <div class="editUser">
                 Edit User
 
                 <form onSubmit={this.editUserSubmit}>
                     <label>
-                    Username:
-                    <input type="text" name="username" onChange={this.handleChange} value={username}/>
+                    Username<br></br>
+                    <input type="text" name="username" className="editUserInput" onChange={this.handleChange} value={username}/>
                     </label>
 
                     <label>
-                    Email:
-                    <input type="text" name="email" onChange={this.handleChange} value={email}/>
+                    Email<br></br>
+                    <input type="text" name="email" className="editUserInput" onChange={this.handleChange} value={email}/>
                     </label>
 
                     <label>
-                    Password:
-                    <input type="text" name="password" onChange={this.handleChange} value={password}/>
+                    Password<br></br>
+                    <input type="text" name="password" className="editUserInput" onChange={this.handleChange} value={password}/>
                     </label>
 
                     <label>
-                    Verify Password:
-                    <input type="text" name="verify_password" onChange={this.handleChange} value={verify_password}/>
+                    Verify Password<br></br>
+                    <input type="text" name="verify_password" className="editUserInput" onChange={this.handleChange} value={verify_password}/>
                     </label>
 
 
