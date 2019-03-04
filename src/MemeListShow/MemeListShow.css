@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.MemeListShow {
+    height: 100vh;
+    text-align: center;
+    font-family: 'Coming Soon', cursive;
+    background-color: black;
+    color: #E9004C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.MemeListShow ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-flow: column nowrap;
+}
+
+.MemeListShow a {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.MemeItem li {
+    text-align: center; 
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.MemeItem li img {
+    height: 250px;
+}
+
+.memeshow-top-text-list {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+}
+
+.memeshow-bottom-text-list {
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+}
