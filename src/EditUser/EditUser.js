@@ -30,7 +30,7 @@ class EditUser extends Component {
           let newData = Object.assign(data, {is_admin: this.props.currentUser.is_admin})
           console.log(newData)
         try {
-            const registerResponse = await fetch(`http://localhost:8000/api/v1/users/${this.props.match.params.id}`, {
+            const registerResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/${this.props.match.params.id}`, {
             method: 'PUT',
             body: JSON.stringify(newData),
             credentials: 'include',

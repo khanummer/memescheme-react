@@ -17,7 +17,7 @@ class MemeShow extends Component {
         console.log(e, 'THIS IS E')
         e.preventDefault();
         try {
-            const deletedResponse = await fetch(`http://localhost:8000/api/v1/memes/${this.props.match.params.id}` ,{
+            const deletedResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/memes/${this.props.match.params.id}` ,{
                 method: 'DELETE',
                 body: JSON.stringify(this.state.meme),
                 credentials: 'include',

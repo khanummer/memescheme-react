@@ -12,7 +12,7 @@ class UserShow extends Component {
 
     findUser = async () => {
         try {
-            const userResponse = await fetch(`http://localhost:8000/api/v1/users/${this.props.match.params.id}` ,{
+            const userResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/${this.props.match.params.id}` ,{
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -37,7 +37,7 @@ class UserShow extends Component {
         e.preventDefault();
         e.stopPropagation();
         try {
-            const deletedResponse = await fetch(`http://localhost:8000/api/v1/users/${this.props.match.params.id}` ,{
+            const deletedResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/${this.props.match.params.id}` ,{
                 method: 'DELETE',
                 body: JSON.stringify(this.state.user),
                 credentials: 'include',

@@ -20,7 +20,7 @@ class EditMeme extends Component {
 
       editMeme = async (data) => {
         try {
-            const registerResponse = await fetch(`http://localhost:8000/api/v1/memes/${this.props.match.params.id}`, {
+            const registerResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/memes/${this.props.match.params.id}`, {
             method: 'PUT',
             body: JSON.stringify(data),
             credentials: 'include',

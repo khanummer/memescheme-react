@@ -21,7 +21,7 @@ class NewMeme extends Component {
   }
 
   handleNewMeme = async (data) => {
-      const newMemeResponse = await fetch('http://localhost:8000/api/v1/memes', {
+      const newMemeResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/memes`, {
           method: 'POST',
           credentials: 'include',
           body: JSON.stringify(data, this.state.created_by),

@@ -13,6 +13,8 @@ import EditUser from './EditUser/EditUser'
 import EditMeme from './EditMeme/EditMeme'
 import NavBar from './NavBar/NavBar'
 
+// ${process.env.REACT_APP_API_URL}
+
 
 class App extends Component {
   state = {
@@ -38,7 +40,7 @@ class App extends Component {
 
   getUsers = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/users', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users`, {
         method: 'GET',
         credentials: 'include',
         headers: {
@@ -59,7 +61,7 @@ class App extends Component {
 
   getMemes = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/memes', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/memes`, {
         method: 'GET',
         credentials: 'include',
         headers: {
@@ -80,7 +82,7 @@ class App extends Component {
 
   handleRegister = async (data) => {
     try {
-      const registerResponse = await fetch("http://localhost:8000/api/v1/users", {
+      const registerResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users`, {
         method: 'POST',
         body: JSON.stringify(data),
         credentials: 'include',
@@ -100,7 +102,7 @@ class App extends Component {
     }
   }
   handleLogin = async (data) => {
-    const loginResponse = await fetch('http://localhost:8000/api/v1/users/login', {
+    const loginResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/users/login`, {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(data),
