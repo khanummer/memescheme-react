@@ -42,13 +42,17 @@ class MemeShow extends Component {
         console.log(this.state, 'this is state from memeshow')
         return (
             <div className="MemeShow">
-                {this.state.meme.map(u => 
+            {this.state.meme.map(u => 
                 <div>
-                    <div>{u.image}</div>
-                    <div>{u.top_text}</div>
-                    <div>{u.bottom_text}</div>
+                    <div className="memeshow-top-text">{u.top_text}</div>
+                    <img className="memeshow-image"src={`${u.image}`}/>
+                    <div className="memeshow-bottom-text">{u.bottom_text}</div>
+
+                    <div>
                     <button onClick={(e) => this.deleteMeme(e)}>Delete Meme</button>
                     <Link to={`/edit-meme/${this.props.match.params.id}`}><button>Edit Meme</button></Link>
+                    </div>
+                    
                 </div>
                 )}
             </div>
