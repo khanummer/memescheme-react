@@ -43,7 +43,7 @@ class MemeShow extends Component {
         return (
             <div className="MemeShow">
             {this.state.meme.map(u => 
-                <div>
+                <div className="MemeListShow">
                     <div className="memeshow-top-text">{u.top_text}</div>
                     <img className="memeshow-image"src={`${u.image}`}/>
                     <div className="memeshow-bottom-text">{u.bottom_text}</div>
