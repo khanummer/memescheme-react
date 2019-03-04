@@ -140,7 +140,7 @@ class App extends Component {
             <Route exact path={'/login'} component={() => <Login handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin} currentUser={this.state.currentUser}/>}/>
             <Route exact path={'/register'} component={() => <Register handleRegister={this.handleRegister} getUsers={this.getUsers} handleLogin={this.handleLogin}/>}/>
             <Route exact path={'/user-show/:id'} component={() => <UserShow getUsers={this.getUsers} users={this.state.users} email={this.state.email} currentUser={this.state.currentUser}/>}/>
-            <Route exact path={'/new-meme'} component={() => <NewMeme created_by={this.state.currentUser}/>}/>
+            <Route exact path={'/new-meme'} component={() => <NewMeme created_by={this.state.currentUser.id}/>}/>
             <Route exact path={'/user-list-show'} component={(props) => <UserListShow {...props} users={this.state.users} />} />
             <Route exact path={'/meme-list-show/'} component={(props) => <MemeListShow {...props} memes={this.state.memes} getMeme={this.getMeme}/>} />
             <Route exact path={'/meme-show/:id'} component={(props) => <MemeShow {...props} memes={this.state.memes}/>}/>
