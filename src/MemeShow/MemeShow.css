@@ -1,5 +1,5 @@
 .MemeShow {
-    height: 130vh;
+    height: 60rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -40,10 +40,10 @@
 .memeshow-top-text {
     color: white;
     font-size: 1rem;
-    padding: 2rem;
+    /* padding: 2rem; */
 
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Rubik Mono One', sans-serif;
@@ -54,10 +54,10 @@
 .memeshow-bottom-text {
     color: white;
     font-size: 1rem;
-    padding: 2rem;
+    /* padding: 2rem; */
     position: absolute;
-    bottom: 20%;
-    left: 37%;
+    bottom: 27%;
+    left: 43%;
     font-family: 'Rubik Mono One', sans-serif;
 
 

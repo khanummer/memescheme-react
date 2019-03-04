@@ -3,7 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 import './MemeListShow.css'
 
 class MemeListShow extends Component {
-    
+
+
     render() {
         console.log(this.props.memes, 'this is props .memes .memes')
         return (
