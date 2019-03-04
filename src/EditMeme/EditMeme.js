@@ -44,27 +44,27 @@ class EditMeme extends Component {
 
     render() {
         return (
-            <div class="editmeme">
-                Edit User
+            <div class="editMeme">
+                Edit Meme
 
                 <form onSubmit={this.editMemeSubmit}>
                     <label>
-                    image:
-                    <input type="text" name="image" onChange={this.handleChange}/>
+                    Image Url<br></br>
+                    <input type="text" name="image" className="editMemeInput" onChange={this.handleChange}/>
                     </label>
 
                     <label>
-                    top_text:
-                    <input type="text" name="top_text" onChange={this.handleChange}/>
+                    Top Text<br></br>
+                    <input type="text" name="top_text" className="editMemeInput" onChange={this.handleChange}/>
                     </label>
 
                     <label>
-                    bottom_text:
-                    <input type="text" name="bottom_text" onChange={this.handleChange}/>
+                    Bottom Text<br></br>
+                    <input type="text" name="bottom_text" className="editMemeInput" onChange={this.handleChange}/>
                     </label>
 
 
-                    <button type="submit">Edit Meme</button>
+                    <button className="editMemeButton"type="submit">Edit Meme</button>
 
                 </form>
 
